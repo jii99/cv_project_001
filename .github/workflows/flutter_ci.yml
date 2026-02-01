@@ -1,0 +1,72 @@
+name: Flutter CI
+
+on:
+  push:
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout source code
+        uses: actions/checkout@v4
+
+      - name: Set up Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          channel: 'stable'
+          cache: true
+
+      - name: Flutter version
+        run: flutter --version
+
+      - name: Install dependencies
+        working-directory: cv_project_001
+        run: flutter pub get
+
+      - name: Analyze project source
+        working-directory: cv_project_001
+        run: flutter analyze
+
+      - name: Run tests
+        working-directory: cv_project_001
+        run: flutter test
+name: Flutter CI
+
+on:
+  push:
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout source code
+        uses: actions/checkout@v4
+
+      - name: Set up Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          channel: 'stable'
+          cache: true
+
+      - name: Flutter version
+        run: flutter --version
+
+      - name: Install dependencies
+        working-directory: cv_project_001
+        run: flutter pub get
+
+      - name: Analyze project source
+        working-directory: cv_project_001
+        run: flutter analyze
+
+      - name: Run tests
+        working-directory: cv_project_001
+        run: flutter test
