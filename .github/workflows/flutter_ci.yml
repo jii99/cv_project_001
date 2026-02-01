@@ -34,6 +34,7 @@ jobs:
       - name: Run tests
         working-directory: cv_project_001
         run: flutter test
+<<<<<<< HEAD
 name: Flutter CI
 
 on:
@@ -70,3 +71,5 @@ jobs:
       - name: Run tests
         working-directory: cv_project_001
         run: flutter test
+=======
+>>>>>>> aa25497e0fc8a844819f494b07ca0e35ca1242fc
